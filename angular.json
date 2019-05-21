@@ -24,12 +24,22 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/assets/plugin-frameworks/swiper.js",
+              "src/assets/common/scripts.js",
+              "src/assets/plugin-frameworks/bootstrap.min.js",
+              "src/assets/plugin-frameworks/jquery-3.2.1.min.js"
             ],
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": [],
+            "scripts": [
+              "src/assets/plugin-frameworks/swiper.js",
+              "src/assets/common/scripts.js",
+              "src/assets/plugin-frameworks/bootstrap.min.js",
+              "src/assets/plugin-frameworks/jquery-3.2.1.min.js"
+
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {
@@ -86,10 +96,20 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": [],
+            "scripts": [
+              "src/assets/plugin-frameworks/swiper.js",
+              "src/assets/common/scripts.js",
+              "src/assets/plugin-frameworks/bootstrap.min.js",
+              "src/assets/plugin-frameworks/jquery-3.2.1.min.js"
+
+            ],
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/assets/plugin-frameworks/swiper.js",
+              "src/assets/common/scripts.js",
+              "src/assets/plugin-frameworks/bootstrap.min.js",
+              "src/assets/plugin-frameworks/jquery-3.2.1.min.js"
             ]
           }
         },
