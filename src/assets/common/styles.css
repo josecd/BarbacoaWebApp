@@ -45,7 +45,7 @@ p { line-height: 1.7; font-size: 1.05em; font-weight: 400; color: #555; }
 
 h1 { font-size: 7.5em; line-height: 1.4; }
 
-h2 { font-size: 4em; line-height: 1.4; }
+h2 { font-size: 4em; line-height: 1.4; text-align: center }
 
 h3 { font-size: 3em; }
 
