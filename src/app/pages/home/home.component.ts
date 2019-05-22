@@ -12,13 +12,12 @@ export class HomeComponent implements OnInit {
 
 
   constructor(private todoService: ServicioCargaService) {
-    
+
   }
 
   ngOnInit() {
     this.todoService.getTodos().subscribe(res => {
       this.todos = res;
     });
-  } 
-   
+  }
 }
