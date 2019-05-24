@@ -7,9 +7,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  isCollapse = false;   // guardamos el valor
+  valor :string;
+  foo: boolean;
+  nombre = "main-menu font-mountainsre";
+  nombre2 = "main-menu font-mountainsre visible-menu";
 
-  ngOnInit() {
+
+  constructor() { 
+    
   }
 
+  ngOnInit() {
+   
+      
+  }
+
+  toggleState() { // manejador del evento
+    let foo = this.isCollapse;
+    this.isCollapse = foo === false ? true : false;
+    console.log(this.isCollapse);
+  }
+  
 }
+
