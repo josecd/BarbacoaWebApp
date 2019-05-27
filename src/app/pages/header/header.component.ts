@@ -14,20 +14,13 @@ export class HeaderComponent implements OnInit {
   nombre2 = "main-menu font-mountainsre visible-menu";
 
 
-  constructor() { 
-    
-  }
+  constructor() {}
 
-  ngOnInit() {
-   
-      
-  }
+  ngOnInit() {  }
 
   toggleState() { // manejador del evento
     let foo = this.isCollapse;
     this.isCollapse = foo === false ? true : false;
-    console.log(this.isCollapse);
   }
-  
 }
 
