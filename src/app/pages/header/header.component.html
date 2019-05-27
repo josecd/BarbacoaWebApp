@@ -7,15 +7,22 @@
                     <h6><a class="plr-20 color-white btn-fill-primary" [routerLink]="['/menu']">Ver menú</a></h6>
             </div><!-- right-area -->
 
-            <a class="menu-nav-icon" data-menu="#main-menu" href="#"><i class="ion-navicon"></i></a>
+            <a class="menu-nav-icon" data-menu="#main-menu"  (click)="toggleState()" ><i class="ion-navicon"></i></a>
 
-            <ul class="main-menu font-mountainsre" id="main-menu">
+            <ul *ngIf="isCollapse == false" class="main-menu font-mountainsre"  id="main-menu"  [ngClass]="{ 'collapse': isCollapse }">
                     <li><a [routerLink]="['/']" >INICIO</a></li>
                     <li><a [routerLink]="['/sobre']">NOSOTROS</a></li>
                     <li><a [routerLink]="['/menu']">MENÚ</a></li>
                     <li><a [routerLink]="['/sucursales']">SUCURSALES</a></li>
                     <li><a [routerLink]="['/contacto']">CONTACTO</a></li>
             </ul>
+            <ul *ngIf="isCollapse == true" class="main-menu font-mountainsre visible-menu"  id="main-menu"  [ngClass]="{ 'collapse': isCollapse }">
+                <li><a [routerLink]="['/']" >INICIO</a></li>
+                <li><a [routerLink]="['/sobre']">NOSOTROS</a></li>
+                <li><a [routerLink]="['/menu']">MENÚ</a></li>
+                <li><a [routerLink]="['/sucursales']">SUCURSALES</a></li>
+                <li><a [routerLink]="['/contacto']">CONTACTO</a></li>
+        </ul>
 
             <div class="clearfix"></div>
     </div><!-- container -->
