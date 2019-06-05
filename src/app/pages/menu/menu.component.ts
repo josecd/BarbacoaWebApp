@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServicioCargaService } from 'src/app/servicios/servicio-carga.service';
 
 @Component({
   selector: 'app-menu',
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+// tslint:disable-next-line: variable-name
+  constructor(public _servicioProducto: ServicioCargaService) { }
 
   ngOnInit() {
   }

@@ -8,17 +8,15 @@ import { AppComponent } from 'src/app/app.component';
 })
 export class HomeComponent implements OnInit {
 
-  products = [];
-  constructor(private servicioProducto: ServicioCargaService) {
-    
+// tslint:disable-next-line: variable-name
+  constructor(public _servicioProducto: ServicioCargaService) {
   }
 
   ngOnInit() {
-    this.servicioProducto.getMenu().subscribe(products => {
-      this.products = products;
-      console.log(products);
-      
-    });
+    // this.servicioProducto.getMenu().subscribe(products => {
+    //   this.products = products;
+    //   console.log(products);
+    // });
 
   }
-} 
+}
