@@ -50,10 +50,15 @@ body {
 	background-color: #FF5E18;
 	border-color: #FF5E18;
 }
+
+//INICIO DE SECCION DE MENU
+
 //separacion de imagen
 .single_menu_list {
 	position: relative;
-	padding-left: 190px;
+	//aqui estaba el error, si quieres hacer algo responsivo necesitas utilizar %
+	//ERROR DEL MENU DE COMIDA [CORREGIDO]
+	padding-left: 35%;
 	margin-bottom: 23px;
 }
 // IMAGEN DEL MENU
@@ -67,6 +72,7 @@ body {
 	border-radius: 50%;
 	transition: .4s
 }
+
 //EFECTO DE LA IMAGEN DEL MENU
 .single_menu_list:hover img {
 	border-radius: 0;
@@ -87,12 +93,13 @@ body {
 	font-style: italic;
 }
 
-
+//FIN DE SECCION DE MENU
 
 ///
 .plr-255{
-	margin-left: 122px;
-	margin-right: 95px;	
+	//ERROR DEL QUIENES SOMOS [CORREGIDO]
+	margin-left: 10%;
+	margin-right: 10%;	
 }
 
 .span{
