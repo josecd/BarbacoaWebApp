@@ -6,6 +6,25 @@ body {
 .mb-60 {
 	margin-bottom: 60px;
 }
+//ir a la parte superior de la pagina
+.scroll-to-top {
+	position: fixed;
+	display: scroll;
+	background-color: red;
+    bottom: 15px;
+    right: 15px;
+    opacity: 0;
+	transition: all .2s ease-in-out;
+	font-size: 20px;
+	float: left;
+}
+
+.show-scroll {
+    opacity: 1;
+    transition: all .2s ease-in-out;
+}
+//fin
+
 .section-title p {
 	font-size: 24px;
 	font-family: Oleo Script;

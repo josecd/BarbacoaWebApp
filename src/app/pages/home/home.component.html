@@ -25,7 +25,7 @@
               <div class="col-md-12">
                      <div class="mt-50 mt-sm-30 mb-50 mb-sm-30 center-text"> <h2>Quiénes Somos</h2> </div>
 
-                     <h5 class="info center-text mb-30 mb-sm-30 plr-255">
+                     <h5 class="center-text mb-30 mb-sm-30 plr-255">
                                    “Para poder hacer que la misión y la visión sea una realidad todos en la empresa debemos
                                     unirnos para mejorar el desempeño total de los restaurantes”</h5>
              </div>
@@ -33,7 +33,10 @@
           </div><!-- row -->
   </div><!-- container -->
 </section>
-
+<!--Scroll to top-->
+<button [ngClass]="{'show-scroll': showScroll}" (click)="scrollToTop()" class="scroll-to-top">
+       Scroll To Top
+    </button>
 
 <section class="story-area bg-seller color-white pos-relative">
   <div class="pos-bottom triangle-up"></div>
