@@ -12,25 +12,27 @@
 </section>
 
 
-<section class="story-area left-text center-sm-text">
-    <div class="container">
-                <div class="heading mb-sm-10"><h3>Especialidades de la casa</h3></div>
-            <div class="row">
+<section  class="story-area left-text center-sm-text">
+    <div  class="container">
+                <div  class="heading mb-sm-10"><h3>Especialidades de la casa</h3></div>
+            <div   class="row">
 
 
                 <!-- tabla de Especialidades de la casa -->
-
-                    <div class="col-lg-3 col-md-4  col-sm-6 ">
-                            <div class="center-text mb-30">
-                                    <div class="ïmg-200x mlr-auto pos-relative">
-                                            <h6 class="ribbon-cont color-white"><div class="ribbon primary"></div><b>OFFER</b></h6>
-                                            <img src="../../../assets/images/especialidades.png" alt="">
+                       <div *ngFor="let item of _servicioProducto.productos ">
+                    <div  *ngIf="item.espeCasa == 1"  class="prueba">
+                            <div  class="center-text mb-30">
+                                    <div   class="ïmg-200x mlr-auto pos-relative">
+                                            <!-- <h6   class="ribbon-cont color-white"><div class="ribbon primary"></div><b>OFFER</b></h6> -->
+                                            <img  src="{{item.avatar}}" alt="">
                                             
                                     </div>
-                                    <h5 class="mt-20">Barbacoa</h5>
-                                    <h4 class="mt-5 color-primary"><b>$11.90</b></h4>
+                                    <h5   class="mt-20">{{item.name}}</h5>
+                                    <h4   class="mt-5 color-primary"><b>${{item.precio}}</b></h4>
                             </div><!--text-center-->
                     </div><!-- col-md-3 -->
+                </div> 
+   
 
             </div><!-- row-->
     </div><!-- container -->
@@ -69,8 +71,8 @@
                                                                     <th></th>
                                                                 </tr>
                                                                 <tr *ngIf="item.banderaTabla == 2" >
-                                                                        <td >{{item.nombre}}</td>
-                                                                        <td >{{item.gramos}} g</td>
+                                                                        <td >{{item.name}}</td>
+                                                                        <td >{{item.gramo}} g</td>
                                                                         <td ><p> Precio: ${{item.precio}}</p> </td>
                                                                 </tr>
                                                                
@@ -88,66 +90,38 @@
                                             </ul> -->
                                          </div>
                                       </div>
+                                      
                                       <div class="col-lg-4 col-md-6">
-                                         <div class="single_special">
-                                                <div class="section-title text-center">
-                                                        <p>Quesadillas</p> 
+                                                <div class="single_special">
+                                                       <div class="section-title text-center">
+                                                        <p>Carne por kilo </p> 
+                                                       </div>
+                                               
+                                                       <img src="../../../assets/images/especialidades.png" alt="">
+                                               
+                                                       <table *ngFor="let item of _servicioProducto.productos " style="width:100%" class="set_menu">
+                                                        <tr>
+                                                          <th></th>
+                                                          <th></th>
+                                                            <th></th>
+                                                        </tr>
+                                                        <tr *ngIf="item.banderaTabla == 13" >
+                                                                <td >{{item.name}}</td>
+                                                                <td >{{item.gramo}} g</td>
+                                                                <td ><p> Precio: ${{item.precio}}</p> </td>
+                                                        </tr>
+                                                       
+                                        </table> 
+                                                   <!-- <ul class="set_menu">
+                                                      <li>Pastor &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
+                                                      <li>Cochinita &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
+                                                      <li>Barbacoa &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
+                                                      <li>Carnitas &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
+                                                      <li>Arrachera &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
+       
+                                                   </ul> -->
                                                 </div>
-                                            <img src="../../../assets/images/quesadillas.jpg" alt="">
-
-                                            <div class="tablaComida">
-                                                <table *ngFor="let item of _servicioProducto.productos " style="width:100%" class="set_menu">
-                                                                <tr>
-                                                                  <th></th>
-                                                                  <th></th>
-                                                                    <th></th>
-                                                                </tr>
-                                                                <tr *ngIf="item.banderaTabla == 2" >
-                                                                        <td >{{item.nombre}}</td>
-                                                                        <td >{{item.gramos}} g</td>
-                                                                        <td ><p> Precio: ${{item.precio}}</p> </td>
-                                                                </tr>
-                                                               
-                                                              </table> 
-                                                        </div>  
-                                            <!-- <ul class="set_menu">
-
-                                                <li>Natural &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
-                                                <li>Cochinita &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
-                                                <li>Tinga de pollo &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
-                                                <li>Tinga de res &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
-                                                <li>Picadillo &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
-                                                <li>Champiñones &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
-                                                <li>Nopales &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
-                                                
-                                                <label for="show">
-                                                                <span>[Mostrar]</span>
-                                                </label>
-                                                <input type="radio" id="show" name="group">
-
-                                                <div id="content" class="set_menu">
-                                                <li>Rajas &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
-                                                <li>Papas con chorizo &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
-                                                <li>Barbacoa &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
-                                                <li>Chicharon prensado &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
-                                                <li>Pastor &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
-                                                <li>Asada &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
-                                                <li>Arrachera &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
-                                                <li>Sirloin &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
-                                                <li>Chuleta &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
-                                                <label for="hide">
-                                                                <span>[Ocultar]</span>
-                                                      </label>
-                                                      <input type="radio" id="hide" name="group">
-                                                </div>
-                                                </ul> -->
-                                         </div>
-                                      </div>
-                                      
-                                    
-                                      
-                                      
-                                      
+                                </div>                                      
                                       
 
                                       <div class="col-lg-4 col-md-6">
@@ -156,7 +130,21 @@
                                                         <p>Especialidades</p> 
                                                 </div>
                                             <img src="../../../assets/images/especialidades.png" alt="">
-                                            <ul class="set_menu">
+
+                                            <table *ngFor="let item of _servicioProducto.productos " style="width:100%" class="set_menu">
+                                                <tr>
+                                                  <th></th>
+                                                  <th></th>
+                                                    <th></th>
+                                                </tr>
+                                                <tr *ngIf="item.banderaTabla == 3" >
+                                                        <td >{{item.name}}</td>
+                                                        <td >{{item.gramo}} g</td>
+                                                        <td ><p> Precio: ${{item.precio}}</p> </td>
+                                                </tr>
+                                               
+                                </table> 
+                                            <!-- <ul class="set_menu">
                                                 <li>Consomé de barbacoa &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
                                                 <li>Consomé chico &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
                                                 <li>Pancita &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
@@ -165,7 +153,7 @@
                                                 <li>Pozole chico &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
                                                 <li>Flautas (4) &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
                                                
-                                            </ul>
+                                            </ul> -->
                                          </div>
                                       </div>
 
@@ -176,8 +164,21 @@
                                                        </div>
                                                
                                                <img src="../../../assets/images/tacos.png" alt="">
+             
+                                               <table *ngFor="let item of _servicioProducto.productos " style="width:100%" class="set_menu">
+                                                <tr>
+                                                  <th></th>
+                                                  <th></th>
+                                                    <th></th>
+                                                </tr>
+                                                <tr *ngIf="item.banderaTabla == 4" >
+                                                        <td >{{item.name}}</td>
+                                                        <td >{{item.gramo}} g</td>
+                                                        <td ><p> Precio: ${{item.precio}}</p> </td>
+                                                </tr>
                                                
-                                                   <ul class="set_menu">
+                                </table> 
+                                                   <!-- <ul class="set_menu">
                                                       <li>Barbacoa &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
                                                       <li>Cochinita &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
                                                       <li>Asada &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
@@ -185,7 +186,7 @@
                                                       <li>Chorizo &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
                                                       <li>Carnitas &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
        
-                                                   </ul>
+                                                   </ul> -->
                                                 </div>
                                         </div>
                                         <div class="col-lg-4 col-md-6">
@@ -195,13 +196,26 @@
                                                                </div>
                                                        
                                                        <img src="../../../assets/images/ordentacos.png" alt="">
+     
+                                                       <table *ngFor="let item of _servicioProducto.productos " style="width:100%" class="set_menu">
+                                                        <tr>
+                                                          <th></th>
+                                                          <th></th>
+                                                            <th></th>
+                                                        </tr>
+                                                        <tr *ngIf="item.banderaTabla == 5" >
+                                                                <td >{{item.name}}</td>
+                                                                <td >{{item.gramo}} g</td>
+                                                                <td ><p> Precio: ${{item.precio}}</p> </td>
+                                                        </tr>
                                                        
-                                                           <ul class="set_menu">
+                                        </table> 
+                                                           <!-- <ul class="set_menu">
                                                               <li>Arrachera &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
                                                               <li>Chuleta &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
                                                               <li>Sirloin &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
                
-                                                           </ul>
+                                                           </ul> -->
                                         </div>
                                         </div>
                                         <div class="col-lg-4 col-md-6">
@@ -211,8 +225,21 @@
                                                                </div>
                                                        
                                                          <img src="../../../assets/images/especialidades.png" alt="">
-                                                                                                
-                                                           <ul class="set_menu">
+
+                                                         <table *ngFor="let item of _servicioProducto.productos " style="width:100%" class="set_menu">
+                                                                <tr>
+                                                                  <th></th>
+                                                                  <th></th>
+                                                                    <th></th>
+                                                                </tr>
+                                                                <tr *ngIf="item.banderaTabla == 6" >
+                                                                        <td >{{item.name}}</td>
+                                                                        <td >{{item.gramo}} g</td>
+                                                                        <td ><p> Precio: ${{item.precio}}</p> </td>
+                                                                </tr>
+                                                               
+                                                </table> 
+                                                           <!-- <ul class="set_menu">
                                                               <li>Pastor &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
                                                               <li>Cochinita &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
                                                               <li>Asada &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
@@ -221,7 +248,7 @@
                                                               <li>Sirloin &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
                                                               <li>Chuleta &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
                
-                                                           </ul>
+                                                           </ul> -->
                                                         </div>
                                         </div>
                                         <div class="col-lg-4 col-md-6">
@@ -231,15 +258,28 @@
                                                                </div>
                                                        
                                                         <img src="../../../assets/images/especialidades.png" alt="">
-                                                       
-                                                           <ul class="set_menu">
+                        
+                                                        <table *ngFor="let item of _servicioProducto.productos " style="width:100%" class="set_menu">
+                                                                <tr>
+                                                                  <th></th>
+                                                                  <th></th>
+                                                                    <th></th>
+                                                                </tr>
+                                                                <tr *ngIf="item.banderaTabla == 7" >
+                                                                        <td >{{item.name}}</td>
+                                                                        <td >{{item.gramo}} g</td>
+                                                                        <td ><p> Precio: ${{item.precio}}</p> </td>
+                                                                </tr>
+                                                               
+                                                </table> 
+                                                           <!-- <ul class="set_menu">
                                                               <li>Pastor &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
                                                               <li>Arrachera &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
                                                               <li>Sirloin &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
                                                               <li>Chuleta &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
                                                               <li>Campechana &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
                
-                                                           </ul>
+                                                           </ul> -->
                                                         </div>
                                         </div>
                                         <div class="col-lg-4 col-md-6">
@@ -249,15 +289,28 @@
                                                                </div>
                                                        
                                                        <img src="../../../assets/images/quesos.png" alt="">
+
+                                                       <table *ngFor="let item of _servicioProducto.productos " style="width:100%" class="set_menu">
+                                                        <tr>
+                                                          <th></th>
+                                                          <th></th>
+                                                            <th></th>
+                                                        </tr>
+                                                        <tr *ngIf="item.banderaTabla == 8" >
+                                                                <td >{{item.name}}</td>
+                                                                <td >{{item.gramo}} g</td>
+                                                                <td ><p> Precio: ${{item.precio}}</p> </td>
+                                                        </tr>
                                                        
-                                                           <ul class="set_menu">
+                                        </table> 
+                                                           <!-- <ul class="set_menu">
                                                               <li>Queso Fundido &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
                                                               <li>Champiqueso &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
                                                               <li>Choriqueso &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
                                                               <li>Arraqueso &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
                                                               <li>Chulequeso &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
                
-                                                           </ul>
+                                                           </ul> -->
                                                         </div>
                                         </div>
                                         <div class="col-lg-4 col-md-6">
@@ -267,13 +320,26 @@
                                                                </div>
                                                        
                                                        <img src="../../../assets/images/alambre.png" alt="">
+
+                                                       <table *ngFor="let item of _servicioProducto.productos " style="width:100%" class="set_menu">
+                                                        <tr>
+                                                          <th></th>
+                                                          <th></th>
+                                                            <th></th>
+                                                        </tr>
+                                                        <tr *ngIf="item.banderaTabla == 9" >
+                                                                <td >{{item.name}}</td>
+                                                                <td >{{item.gramo}} g</td>
+                                                                <td ><p> Precio: ${{item.precio}}</p> </td>
+                                                        </tr>
                                                        
-                                                           <ul class="set_menu">
+                                        </table> 
+                                                           <!-- <ul class="set_menu">
                                                               <li>Pollo &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
                                                               <li>Pastor &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
                                                               <li>Sirloin O Chuleta &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
                                                               <li>Arrachera &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
-                                                           </ul>
+                                                           </ul> -->
                                                         </div>
                                         </div>
                                         <div class="col-lg-4 col-md-6">
@@ -284,8 +350,21 @@
                                                        
                                                                <img src="../../../assets/images/especialidades.png" alt="">
                                                       
-                                                       
-                                                           <ul class="set_menu">
+  
+                                                               <table *ngFor="let item of _servicioProducto.productos " style="width:100%" class="set_menu">
+                                                                <tr>
+                                                                  <th></th>
+                                                                  <th></th>
+                                                                    <th></th>
+                                                                </tr>
+                                                                <tr *ngIf="item.banderaTabla == 10" >
+                                                                        <td >{{item.name}}</td>
+                                                                        <td >{{item.gramo}} g</td>
+                                                                        <td ><p> Precio: ${{item.precio}}</p> </td>
+                                                                </tr>
+                                                               
+                                                </table> 
+                                                           <!-- <ul class="set_menu">
                                                               <li>Pastor &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
                                                               <li>Chicharrón &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
                                                               <li>Cochinita &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
@@ -293,7 +372,7 @@
                                                               <li>Arrachera &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
                                                               <li>Sirloin &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
                                                               <li>Chuleta &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
-                                                           </ul>
+                                                           </ul> -->
                                                         </div>
                                         </div>
                                         <div class="col-lg-4 col-md-6">
@@ -304,15 +383,28 @@
                                                        
                                                                <img src="../../../assets/images/especialidades.png" alt="">
                                                      
-                                                       
-                                                           <ul class="set_menu">
+
+                                                               <table *ngFor="let item of _servicioProducto.productos " style="width:100%" class="set_menu">
+                                                                <tr>
+                                                                  <th></th>
+                                                                  <th></th>
+                                                                    <th></th>
+                                                                </tr>
+                                                                <tr *ngIf="item.banderaTabla == 11" >
+                                                                        <td >{{item.name}}</td>
+                                                                        <td >{{item.gramo}} g</td>
+                                                                        <td ><p> Precio: ${{item.precio}}</p> </td>
+                                                                </tr>
+                                                               
+                                                </table> 
+                                                           <!-- <ul class="set_menu">
                                                               <li>Pastor &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
                                                               <li>Sirloin &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
                                                               <li>Chuleta &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
                                                               <li>Arrachera &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
                                                               <li>Mixto &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
                
-                                                           </ul>
+                                                           </ul> -->
                                                         </div>
                                         </div>
                                         <div class="col-lg-4 col-md-6">
@@ -322,34 +414,87 @@
                                                                </div>
                                                        
                                                                <img src="../../../assets/images/especialidades.png" alt="">
+                                                               <table *ngFor="let item of _servicioProducto.productos " style="width:100%" class="set_menu">
+                                                                <tr>
+                                                                  <th></th>
+                                                                  <th></th>
+                                                                    <th></th>
+                                                                </tr>
+                                                                <tr *ngIf="item.banderaTabla == 12" >
+                                                                        <td >{{item.name}}</td>
+                                                                        <td >{{item.gramo}} g</td>
+                                                                        <td ><p> Precio: ${{item.precio}}</p> </td>
+                                                                </tr>
+                                                               
+                                                </table>                                                        
                                                        
-                                                       
-                                                           <ul class="set_menu">
+                                                           <!-- <ul class="set_menu">
                                                               <li>3 personas &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
                                                               <li>4 personas &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
                
-                                                           </ul>
+                                                           </ul> -->
                                                         </div>
                                         </div>
+
+
                                         <div class="col-lg-4 col-md-6">
                                                         <div class="single_special">
                                                                <div class="section-title text-center">
-                                                                <p>Carne por kilo </p> 
+                                                                       <p>Quesadillas</p> 
                                                                </div>
-                                                       
-                                                               <img src="../../../assets/images/especialidades.png" alt="">
-                                                       
-                                                       
-                                                           <ul class="set_menu">
-                                                              <li>Pastor &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
-                                                              <li>Cochinita &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
-                                                              <li>Barbacoa &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
-                                                              <li>Carnitas &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
-                                                              <li>Arrachera &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
+                                                           <img src="../../../assets/images/quesadillas.jpg" alt="">
                
-                                                           </ul>
+                                                           <div class="tablaComida">
+                                                               <table *ngFor="let item of _servicioProducto.productos " style="width:100%" class="set_menu">
+                                                                               <tr>
+                                                                                 <th></th>
+                                                                                 <th></th>
+                                                                                   <th></th>
+                                                                               </tr>
+                                                                               <tr *ngIf="item.banderaTabla == 2" >
+                                                                                       <td >{{item.name}}</td>
+                                                                                       <td >{{item.gramo}} g</td>
+                                                                                       <td ><p> Precio: ${{item.precio}}</p> </td>
+                                                                               </tr>
+                                                                              
+                                                               </table> 
+                                                                       </div>  
+                                                           <!-- <ul class="set_menu">
+               
+                                                               <li>Natural &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
+                                                               <li>Cochinita &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
+                                                               <li>Tinga de pollo &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
+                                                               <li>Tinga de res &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
+                                                               <li>Picadillo &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
+                                                               <li>Champiñones &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
+                                                               <li>Nopales &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
+                                                               
+                                                               <label for="show">
+                                                                               <span>[Mostrar]</span>
+                                                               </label>
+                                                               <input type="radio" id="show" name="group">
+               
+                                                               <div id="content" class="set_menu">
+                                                               <li>Rajas &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
+                                                               <li>Papas con chorizo &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
+                                                               <li>Barbacoa &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
+                                                               <li>Chicharon prensado &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
+                                                               <li>Pastor &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
+                                                               <li>Asada &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
+                                                               <li>Arrachera &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
+                                                               <li>Sirloin &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
+                                                               <li>Chuleta &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
+                                                               <label for="hide">
+                                                                               <span>[Ocultar]</span>
+                                                                     </label>
+                                                                     <input type="radio" id="hide" name="group">
+                                                               </div>
+                                                               </ul> -->
                                                         </div>
-                                        </div> 
+                                                     </div>
+                                                     
+
+                                      
                                         <div class="col-lg-4 col-md-6">
                                                         <div class="single_special">
                                                                <div class="section-title text-center">
@@ -357,12 +502,24 @@
                                                                </div>
                                                        
                                                                <img src="../../../assets/images/especialidades.png" alt="">
-                                                      
-                                                       
+                                                               <table *ngFor="let item of _servicioProducto.productos " style="width:100%" class="set_menu">
+                                                                <tr>
+                                                                  <th></th>
+                                                                  <th></th>
+                                                                    <th></th>
+                                                                </tr>
+                                                                <tr *ngIf="item.banderaTabla == 14" >
+                                                                        <td >{{item.name}}</td>
+                                                                        <td >{{item.gramo}} g</td>
+                                                                        <td ><p> Precio: ${{item.precio}}</p> </td>
+                                                                </tr>
+                                                               
+                                                </table>                                                  
+<!--                                                        
                                                            <ul class="set_menu">
                                                               <li>Chocoflan &nbsp;&nbsp;  50 g &nbsp;&nbsp; <span>Price: $9.00</span></li><br>
                
-                                                           </ul>
+                                                           </ul> -->
                                         </div>
                                         </div>                                                                                                                      
                                    </div>

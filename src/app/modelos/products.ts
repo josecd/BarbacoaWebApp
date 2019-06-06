@@ -5,4 +5,6 @@ export interface Product {
     precio?: number;
     gramo?: number;
     banderaTabla?: number;
+    espeCasa?: number;
+    avatar?:string;
      }
