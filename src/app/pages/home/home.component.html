@@ -25,7 +25,7 @@
               <div class="col-md-12">
                      <div class="mt-50 mt-sm-30 mb-50 mb-sm-30 center-text"> <h2>Quiénes Somos</h2> </div>
 
-                     <h5 class="center-text mb-50 mb-sm-30 plr-255">
+                     <h5 class="center-text mb-30 mb-sm-30 plr-255">
                                    “Para poder hacer que la misión y la visión sea una realidad todos en la empresa debemos
                                     unirnos para mejorar el desempeño total de los restaurantes”</h5>
              </div>
@@ -33,7 +33,10 @@
           </div><!-- row -->
   </div><!-- container -->
 </section>
-
+<!--Scroll to top-->
+<button [ngClass]="{'show-scroll': showScroll}" (click)="scrollToTop()" class="scroll-to-top">
+       Scroll To Top
+    </button>
 
 <section class="story-area bg-seller color-white pos-relative">
   <div class="pos-bottom triangle-up"></div>
@@ -110,7 +113,7 @@
                           <div class="col-xl-12">
                                 <div class="heading">
                                   
-                                        <h2>Un poco del menú de organos</h2>
+                                        <h2>Un poco del menú</h2>
                                 </div>
                           </div>
                        </div>
@@ -138,10 +141,8 @@
                                                          <div class="menu_content">
                                                                 <h4>Desayuno  </h4>
                                                                 <div class="tablaComida">
-
-                                                                      <!-- TU PROBLEMA ESTA EN EL STYLE QUE PUSISTE AQUI-->
-                                                                <table *ngFor="let item of _servicioProducto.productos "   style="width:100%" class="set_menu">
-                                                                      
+                                                                      <table *ngFor="let item of _servicioProducto.productos "   style="width:100%" class="set_menu">
+                                                               
                                                                              <tr >
                                                                                <th></th>
                                                                                <th></th>
@@ -151,16 +152,18 @@
                                                                     
                                                                              <tr>
                                                                              
-                                                                               <td *ngIf="item.banderaTabla ==1" >{{item.name}}</td>
-                                                                               <td *ngIf="item.banderaTabla == 1" >{{item.gramo}} g</td>
-                                                                               <td *ngIf="item.banderaTabla == 1"> <p> Precio: ${{item.precio}}</p> </td>
+                                                                               <td *ngIf="item.banderaTabla == 2" >{{item.name}}</td>
+                                                                               <td *ngIf="item.banderaTabla == 2" >{{item.gramo}} g</td>
+                                                                               <td *ngIf="item.banderaTabla == 2"> <p> Precio: ${{item.precio}}</p> </td>
                                                                                    
                                                                              </tr>
 
                                                                            </table> 
-                                                                     </div>
+                                                                    </div>
+                                                                
                                                          </div>
                                                   </div>
+                                                  <!--INICIO DE PLATILLO DE COMIDA-->
                                                   <div class="single_menu_list">
                                                                <img src="../../../assets/images/especialidades.png" alt="">
                                                                <div class="menu_content">
@@ -187,6 +190,8 @@
                                                                            </div>
                                                                </div>
                                                         </div>
+
+                                                        <!--INICIO DE PLATILLO DE COMIDA-->
                                                         <div class="single_menu_list">
                                                                       <img src="../../../assets/images/especialidades.png" alt="">
                                                                       <div class="menu_content">
@@ -242,6 +247,7 @@
                                                                                          </table> 
                                                                                   </div>
                                                                       </div>
+                                                                      <!--INICIO DE PLATILLO DE COMIDA-->
                                                                </div><div class="single_menu_list">
                                                                              <img src="../../../assets/images/especialidades.png" alt="">
                                                                              <div class="menu_content">
@@ -267,7 +273,9 @@
                                                                                                 </table> 
                                                                                          </div>
                                                                              </div>
-                                                                      </div><div class="single_menu_list">
+                                                                      </div>
+                                                                      <!--INICIO DE PLATILLO DE COMIDA-->
+                                                                      <div class="single_menu_list">
                                                                                     <img src="../../../assets/images/especialidades.png" alt="">
                                                                                     <div class="menu_content">
                                                                                            <h4>Gringas  </h4>
