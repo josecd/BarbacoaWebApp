@@ -866,11 +866,19 @@ section {
 }
 
 
-.bg-1 { background: url(../images/slider_1_1920_1200.jpg) no-repeat center; background-size: cover; }
+.bg-1 { background: url(../images/slider_1_1920_1200.jpg); 
+        height: 100%; 
 
-.bg-2 {   background: url(../images/story_bg_1.png) no-repeat center; background-size: 100%; }
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover; 
+}
 
-.bg-3 {  background: url(../images/story_bg_2.png) no-repeat center;  background-size: 100%; }
+.bg-2 {   background: url(../images/home1.png) no-repeat center; background-size: 100%; }
+
+.bg-3 {  background: url(../images/home2.png) no-repeat center;  background-size: 100%; }
 
 .bg-4 {  background: url(../images/slider_2_1920_600.jpg) no-repeat center;  background-size: cover; }
 
@@ -4521,7 +4529,7 @@ ul.icon li a{ padding: 10px;  }
 }
 
 .mb-20 {
-        margin-bottom: 20px !important;
+        margin-bottom: 6px !important;
 }
 
 .mb-25 {

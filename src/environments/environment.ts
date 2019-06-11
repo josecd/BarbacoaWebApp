@@ -5,13 +5,13 @@
 export const environment = {
   production: false,
    firebaseConfig : {
-    apiKey: "AIzaSyCcdlYzJxxunk6OaraTMQXuvBglnJh9U3k",
-    authDomain: "barbacoda1-85afe.firebaseapp.com",
-    databaseURL: "https://barbacoda1-85afe.firebaseio.com",
-    projectId: "barbacoda1-85afe",
-    storageBucket: "barbacoda1-85afe.appspot.com",
-    messagingSenderId: "158668826147",
-    appId: "1:158668826147:web:1e0e919a93f7e1ad"
+    apiKey: "AIzaSyCDpPRQ2L2RryX4rIBlyyRVN-67fV8KyiQ",
+    authDomain: "barbacoadelatulum1.firebaseapp.com",
+    databaseURL: "https://barbacoadelatulum1.firebaseio.com",
+    projectId: "barbacoadelatulum1",
+    storageBucket: "barbacoadelatulum1.appspot.com",
+    messagingSenderId: "588314025112",
+    appId: "1:588314025112:web:a95b996b70bdeb9d"
   },
 };
 

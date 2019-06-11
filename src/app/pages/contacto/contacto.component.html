@@ -15,7 +15,6 @@
         <section class="story-area left-text center-sm-text">
                 <div class="container">
                         <div class="heading">
-                                <img class="heading-img" src="assets/images/heading_logo.png" alt="">
                                 <h2>Bienvenidos</h2>
                                 <h5 class="mt-10 mb-30">Envianos Un Mensaje</h5>
                                 <p class="mx-w-700x mlr-auto">Contáctenos para sus eventos, ofreciéndole los
@@ -23,15 +22,49 @@
                                          de igual manera visítenos para cualquier información en nuestras sucursales.</p>
                         </div>
         
-                        <form class="form-style-1 placeholder-1">
+                        <form class="form-style-1 placeholder-1" [formGroup]="exampleForm" novalidate (ngSubmit)="onSubmit(exampleForm.value)">
                                 <div class="row">
-                                        <div class="col-md-6"> <input class="mb-20" type="text" placeholder="Nombre">  </div>
-                                        <div class="col-md-6"> <input class="mb-20" type="text" placeholder="Correo">  </div>
-                                        <div class="col-md-12"><input class="mb-20" type="text" placeholder="Tema">  </div>
+                                              
+                                        <div class="col-md-6"> <input class="mb-20" type="text" placeholder="Nombre" formControlName="nombre"> 
+                                                <div class="error-messages">
+                                                        <ng-container *ngFor="let validation of validation_messages.nombre">
+                                                        <div lass="error-message" *ngIf="exampleForm.get('nombre').hasError(validation.type) && (exampleForm.get('nombre').dirty || exampleForm.get('nombre').touched)" >{{validation.message}}</div>
+                                                      </ng-container>
+                                                </div>
+                                        </div>
+                                        <div class="col-md-6"> <input class="mb-20" type="text" name="correo" placeholder="Correo" formControlName="correo">
+                                                <div  class="error-messages"> 
+                                                         <ng-container *ngFor="let error of validation_messages.correo">
+                                                                <div class="error-message" *ngIf="exampleForm.get('correo').hasError(error.type) && (exampleForm.get('correo').dirty ||exampleForm.get('correo').touched)">
+                                                                 {{error.message}}
+                                                                </div>
+                                                        </ng-container> 
+                                                </div>
+                                        </div>
+                                        <div class="col-md-6"><input class="mb-20" type="text" placeholder="Tema" formControlName="tema"> 
+                                                <div class="error-messages">
+                                                        <ng-container *ngFor="let validation of validation_messages.tema">
+                                                          <div class="error-message"  *ngIf="exampleForm.get('tema').hasError(validation.type) && (exampleForm.get('tema').dirty || exampleForm.get('tema').touched)" style="padding: 10px">{{validation.message}}</div>
+                                                        </ng-container>
+                                                </div>
+                                        </div>
+                                        <div class="col-md-6"><input class="mb-20" type="text" placeholder="Numero telefónico" formControlName="numero"> 
+                                                <div class="error-messages" >
+                                                        <ng-container *ngFor="let validation of validation_messages.numero">
+                                                         <div  class="error-message" *ngIf="exampleForm.get('numero').hasError(validation.type) && (exampleForm.get('numero').dirty || exampleForm.get('numero').touched)" style="padding: 10px">{{validation.message}}</div>
+                                                        </ng-container>
+                                                </div >
+                                        </div>
                                         <div class="col-md-12">
-                                                <textarea class="h-200x ptb-20" placeholder="Mensaje"></textarea></div>
+                                                <textarea class="h-200x ptb-20" placeholder="Mensaje" formControlName="mensaje"></textarea>
+                                                <div class="error-messages" >
+                                                        <ng-container *ngFor="let validation of validation_messages.mensaje">
+                                                         <span class="error-message" *ngIf="exampleForm.get('mensaje').hasError(validation.type) && (exampleForm.get('mensaje').dirty || exampleForm.get('mensaje').touched)" style="padding: 10px">{{validation.message}}</span>
+                                                        </ng-container>
+                                                </div>
+                                        </div>
                                 </div><!-- row -->
-                                <h6 class="center-text mtb-30"><a href="#" class="btn-primaryc plr-25"><b>Enviar Mensaje</b></a></h6>
+                                <h6 class="center-text mtb-30"><button  [disabled]="!exampleForm.valid" type="submit" class="btn-primaryc plr-25" >Enviar Mensaje</button></h6>
                         </form>
                 </div><!-- container -->
         </section>
