@@ -106,11 +106,11 @@
                                                          <div class="menu_content">
                                                                <h4>Desayuno  </h4>
                                                                <div class="tablaComida">
-                                                               <table *ngFor="let item of _servicioProducto.productos "   style="width:100%" class="set_menu">
+                                                               <table *ngFor="let item of _servicioProducto.dato"   style="width:100%" class="set_menu">
                                                                       <tr>
-                                                                             <td *ngIf="item.banderaTabla == 2" >{{item.name}}</td>
-                                                                             <td *ngIf="item.banderaTabla == 2" >{{item.gramo}} g</td>
-                                                                             <td *ngIf="item.banderaTabla == 2"> <p> Precio: ${{item.precio}}</p> </td>
+                                                                             <td  >{{item.name}}</td>
+                                                                             <td >{{item.gramo}} g</td>
+                                                                             <td > <p> Precio: ${{item.precio}}</p> </td>
                                                                       </tr>
 
                                                                </table> 

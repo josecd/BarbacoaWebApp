@@ -31,6 +31,7 @@ hideScrollHeight = 100;
 
 
   }
+  
   scrollToTop() 
     { 
       (function smoothscroll() 

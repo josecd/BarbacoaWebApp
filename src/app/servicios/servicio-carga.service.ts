@@ -17,6 +17,7 @@ export class ServicioCargaService {
   cargando = true;
   productos: Product[] = [];
   productosFiltrado: Product[] = [];
+   dato=[];
 
   constructor(private db: AngularFirestore, private http: HttpClient) {
 
@@ -35,6 +36,15 @@ export class ServicioCargaService {
          this.db.collection('menu').valueChanges()
       .subscribe((resp: Product[]) => {
         this.productos = resp;
+        let x=0;
+        //lo hiso angel.
+        while(x<3){
+          this.dato.push(this.productos[x]);
+          x++;
+
+        }     
+        
+        
         this.cargando = false;
         resolve();
           });
