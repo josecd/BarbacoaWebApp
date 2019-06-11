@@ -537,50 +537,111 @@
 </section>
 
 
-<section>
-    <div class="container">
-            
+<section class="menu_list mt-60 mb-60">
+        <div class="container">                        
+                <div class="row">
+                        <div class="col-md-6">
 
-            <div class="row">
-                    <div class="col-md-6">
-                            <div class="sided-90x mb-30">
-                                    <div class="s-left"><img class="br-3" src="assets/images/menu-5-120x120.jpg" alt="Menu Image"></div><!--s-left-->
-                                    <div class="s-right">
-                                            <h5 class="mb-10"><b>Pizza Margherita</b><b class="color-primary float-right">$12.00</b></h5>
-                                            <p class="pr-70">Maecenas fermentum tortor id fringilla molestie. In hac habitasse platea dictumst. </p>
-                                    </div><!--s-right-->
-                            </div><!-- sided-90x -->
-                    </div><!-- food-menu -->
+                                <div class="single_menu_list">
+                                        <img src="../../../assets/images/especialidades.png" alt="">
+                                        <div class="menu_content">
+                                                <h4>BEBIDAS </h4>
+                                                <div class="tablaComida">
+                                                <table *ngFor="let item of _servicioProducto.productos "   style="width:100%" class="set_menu">
+                                                        <tr>
+                                                                <td *ngIf="item.banderaTabla == 2" >{{item.name}}</td>
+                                                                <td *ngIf="item.banderaTabla == 2" >{{item.gramo}} g</td>
+                                                                <td *ngIf="item.banderaTabla == 2"> <p> Precio: ${{item.precio}}</p> </td>                       
+                                                        </tr>
+                                                </table> 
+                                                </div>
+                                        </div>
+                                </div>
+                                <!--INICIO DE PLATILLO DE COMIDA-->
+                                <div class="single_menu_list">
+                                        <img src="../../../assets/images/especialidades.png" alt="">
+                                        <div class="menu_content">
+                                                <h4>CERVEZAS  </h4>
+                                                <div class="tablaComida">
+                                                <table *ngFor="let item of _servicioProducto.productos "   style="width:100%" class="set_menu">
+                                                        <tr>
+                                                                <td *ngIf="item.banderaTabla == 2" >{{item.name}}</td>
+                                                                <td *ngIf="item.banderaTabla == 2" >{{item.gramo}} g</td>
+                                                                <td *ngIf="item.banderaTabla == 2"> <p> Precio: ${{item.precio}}</p> </td>
+                                                        </tr>
+                                                </table> 
+                                                </div>
+                                        </div>
+                                 </div>
 
-                    <div class="col-md-6">
-                            <div class="sided-90x mb-30 ">
-                                    <div class="s-left"><img class="br-3" src="assets/images/menu-6-120x120.jpg" alt="Menu Image"></div><!--s-left-->
-                                    <div class="s-right">
-                                            <h5 class="mb-10"><b>Italian pasta</b><b class="color-primary float-right">$20.00</b></h5>
-                                            <p class="pr-70">Proin dictum viverra varius. Etiam vulputate libero dui, at pretium elit elementum quis. </p>
-                                    </div><!--s-right-->
-                            </div><!-- sided-90x -->
-                    </div><!-- food-menu -->
+                                <!--INICIO DE PLATILLO DE COMIDA-->
+                                <div class="single_menu_list">
+                                        <img src="../../../assets/images/especialidades.png" alt="">
+                                        <div class="menu_content">
+                                                <h4>VASOS  </h4>
+                                                <div class="tablaComida">
+                                                <table *ngFor="let item of _servicioProducto.productos "   style="width:100%" class="set_menu">                                                                                 
+                                                        <tr>
+                                                                <td *ngIf="item.banderaTabla == 3" >{{item.name}}</td>
+                                                                <td *ngIf="item.banderaTabla == 3" >{{item.gramo}} g</td>
+                                                                <td *ngIf="item.banderaTabla == 3"> <p> Precio: ${{item.precio}}</p> </td>
+                                                        </tr>
+                                                </table> 
+                                                </div>
+                                        </div>
+                                 </div>                                                  
+                         </div>
 
-                    <div class="col-md-6">
-                            <div class="sided-90x mb-30">
-                                    <div class="s-left"><img class="br-3" src="assets/images/menu-7-120x120.jpg"  alt="Menu Image"></div><!--s-left-->
-                                    <div class="s-right">
-                                            <h5 class="mb-10"><b>Pizza Prosciuto</b><b class="color-primary float-right">$12.00</b></h5>
-                                            <p class="pr-70">Maecenas fermentum tortor id fringilla  molestie. In hac habitasse platea dictumst. </p>
-                                    </div><!--s-right-->
-                            </div><!-- sided-90x -->
-                    </div><!-- food-menu -->
-
-                    <div class="col-md-6">
-                            <div class="sided-90x mb-30 ">
-                                    <div class="s-left"><img class="br-3" src="assets/images/menu-8-120x120.jpg" alt="Menu Image"></div><!--s-left-->
-                                    <div class="s-right">
-                                            <h5 class="mb-10"><b>Broschettas</b><b class="color-primary float-right">$6.00</b></h5>
-                                            <p class="pr-70">Proin dictum viverra varius. Etiam vulputate libero dui, at pretium elit elementum quis. </p>
-                                    </div><!--s-right-->
-                            </div><!-- sided-90x -->
-                    </div><!-- food-menu -->
-            </div><!-- row -->
-    </div><!-- container -->
+                                               
+                        <div class="col-md-6">
+                                <div class="single_menu_list">
+                                        <img src="../../../assets/images/especialidades.png" alt="">
+                                        <div class="menu_content">
+                                                <h4>BEBIDAS ESPECIALES</h4>
+                                                <div class="tablaComida">
+                                                <table *ngFor="let item of _servicioProducto.productos "   style="width:100%" class="set_menu">
+                                                        <tr>                                                                                         
+                                                                <td *ngIf="item.banderaTabla == 4" >{{item.name}}</td>
+                                                                <td *ngIf="item.banderaTabla == 4" >{{item.gramo}} g</td>
+                                                                <td *ngIf="item.banderaTabla == 4"> <p> Precio: ${{item.precio}}</p> </td>
+                                                        </tr>
+                                                </table> 
+                                                </div>
+                                         </div>
+                                </div>
+                                <!--INICIO DE PLATILLO DE COMIDA-->
+                                <div class="single_menu_list">
+                                        <img src="../../../assets/images/especialidades.png" alt="">
+                                        <div class="menu_content">
+                                                <h4>MICHELADAS  </h4>
+                                                <div class="tablaComida">
+                                                <table *ngFor="let item of _servicioProducto.productos "   style="width:100%" class="set_menu">
+                                                        <tr>
+                                                                <td *ngIf="item.banderaTabla == 6" >{{item.name}}</td>
+                                                                <td *ngIf="item.banderaTabla == 6" >{{item.gramo}} g</td>
+                                                                <td *ngIf="item.banderaTabla == 6"> <p> Precio: ${{item.precio}}</p> </td>
+                                                        </tr>
+                                                </table> 
+                                                </div>
+                                        </div>
+                                 </div>
+                                <!--INICIO DE PLATILLO DE COMIDA-->
+                                <div class="single_menu_list">
+                                        <img src="../../../assets/images/especialidades.png" alt="">
+                                        <div class="menu_content">
+                                                <h4>OTROS  </h4>
+                                                <div class="tablaComida">
+                                                <table *ngFor="let item of _servicioProducto.productos "   style="width:100%" class="set_menu">
+                                                        <tr>
+                                                                <td *ngIf="item.banderaTabla == 7" >{{item.name}}</td>
+                                                                <td *ngIf="item.banderaTabla == 7" >{{item.gramo}} g</td>
+                                                                <td *ngIf="item.banderaTabla == 7"> <p> Precio: ${{item.precio}}</p> </td>
+                                                        </tr>
+                                                </table> 
+                                                </div>
+                                        </div>
+                                </div>
+                         </div>
+                 </div>
+        </div>    
 </section>
