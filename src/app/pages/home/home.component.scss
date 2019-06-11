@@ -75,10 +75,8 @@ body {
 //separacion de imagen
 .single_menu_list {
 	position: relative;
-	//aqui estaba el error, si quieres hacer algo responsivo necesitas utilizar %
-	//ERROR DEL MENU DE COMIDA [CORREGIDO]
 	padding-left: 35%;
-	margin-bottom: 23px;
+	margin-bottom: 30px;
 }
 // IMAGEN DEL MENU
 .single_menu_list img {
