@@ -27,6 +27,7 @@ import { ServicioCargaService } from './servicios/servicio-carga.service';
 
 // HTTP
 import {HttpClientModule  } from '@angular/common/http';
+import { FirebaseService } from './servicios/firebase.service';
 
 
 enableProdMode();
@@ -49,12 +50,13 @@ enableProdMode();
     AngularFireDatabaseModule,
     AngularFirestoreModule,
     FormsModule,
+    ReactiveFormsModule,
     AngularFireStorageModule,
     CommonModule,
     HttpClientModule
 
   ],
-  providers: [ServicioCargaService],
+  providers: [ServicioCargaService,FirebaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
