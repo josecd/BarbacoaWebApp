@@ -17,12 +17,15 @@ export class ContactoComponent implements OnInit {
       { type: 'required', message: 'Nombre es requerido.' }
     ],
     'correo': [
-      { type: 'required', message: 'Correo es requerido.' }
+      { type: 'required', message: 'El correo es necesario' },
+      { type: 'minLength', mesaage: 'El correo no cumple con los caracteres' },
+      { type: 'maxLength', message: 'El correo tiene muchos caracteres' },
+      { type: 'pattern', message: 'Ingresa un correo valido' }
     ],
     'tema': [
       { type: 'required', message: 'Tema es requerido.' },
     ],
-    'telefono': [
+    'numero': [
       { type: 'required', message: 'Telefono es requerido.' },
     ]
     ,
@@ -39,21 +42,38 @@ export class ContactoComponent implements OnInit {
       this.createForm(); 
     }
 
+    myControl = new FormControl();
 
    createForm() {
      this.exampleForm = this.fb.group({
        nombre: ['', Validators.required ],
-       correo: ['', Validators.required ],
+       correo: new FormControl(
+        '',
+        Validators.compose([
+          Validators.required,
+          Validators.minLength(6),
+          Validators.maxLength(50),
+          Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$')
+        ])
+      ),
        tema: ['', Validators.required ],
        numero:['', Validators.required ],
-       menaje:['',Validators.required],
+       mensaje:['',Validators.required],
      });
    }
 
    resetFields(){
      this.exampleForm = this.fb.group({
        nombre: new FormControl('', Validators.required),
-       correo: new FormControl('', Validators.required),
+       correo: new FormControl(
+        '',
+        Validators.compose([
+          Validators.required,
+          Validators.minLength(6),
+          Validators.maxLength(50),
+          Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$')
+        ])
+      ),
        tema: new FormControl('', Validators.required),
        numero: new FormControl('', Validators.required),
        mensaje: new FormControl('', Validators.required),
