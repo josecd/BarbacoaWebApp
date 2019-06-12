@@ -1,6 +1,6 @@
 
 
-<section class="bg-1 h-900x main-slider pos-relative">
+<section class="bg-1 h-900x main-slider pos-relative" (scroll)="onWindowScroll($event);">
        
   <div class="triangle-up pos-bottom"></div>
   <div class="container h-100">
@@ -106,7 +106,7 @@
                                                          <div class="menu_content">
                                                                <h4>Desayuno  </h4>
                                                                <div class="tablaComida">
-                                                               <table *ngFor="let item of _servicioProducto.productos "   style="width:100%" class="set_menu">
+                                                               <table *ngFor="let item of _servicioProducto.dato"   style="width:100%" class="set_menu">
                                                                       <tr>
                                                                              <td *ngIf="item.banderaTabla == 1" >{{item.name}}</td>
                                                                              <td *ngIf="item.banderaTabla == 1" >{{item.gramo}} g</td>
