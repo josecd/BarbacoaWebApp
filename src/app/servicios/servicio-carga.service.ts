@@ -38,7 +38,7 @@ export class ServicioCargaService {
         this.productos = resp;
         let x=0;
         //lo hiso angel.
-        while(x<3){
+        while(x<6){
           this.dato.push(this.productos[x]);
           x++;
 
