@@ -3,12 +3,14 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 import { FirebaseService } from 'src/app/servicios/firebase.service';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-contacto',
   templateUrl: './contacto.component.html',
   styleUrls: ['./contacto.component.scss']
 })
 export class ContactoComponent implements OnInit {
+
 
   exampleForm: FormGroup;
 
