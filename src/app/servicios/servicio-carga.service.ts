@@ -19,10 +19,15 @@ export class ServicioCargaService {
   productosFiltrado: Product[] = [];
    dato=[];
 
+   productos1: Product[] = [];
+   productosFiltrado1: Product[] = [];
+    dato1=[];
+
   constructor(private db: AngularFirestore, private http: HttpClient) {
 
     //  this.products = this.db.collection('menu').valueChanges();
       this.cargarProductos();
+      this.cargarProductosBebidas();
 
     }
 
@@ -37,13 +42,32 @@ export class ServicioCargaService {
       .subscribe((resp: Product[]) => {
         this.productos = resp;
         let x=0;
-        //lo hiso angel.
-        while(x<6){
+        while(x<8){
           this.dato.push(this.productos[x]);
           x++;
 
-        }     
+        }
         
+        this.cargando = false;
+        resolve();
+          });
+      });
+    }
+
+    private cargarProductosBebidas() {
+      return new Promise((resolve, reject) => {
+        // this.http.get('https://angular-html-2dd19.firebaseio.com/productos_idx.json')
+         this.db.collection('menuBebidas').valueChanges()
+      .subscribe((resp: Product[]) => {
+        this.productos1 = resp;
+        let x=0;
+        //lo hiso angel.
+        while(x<6){
+          this.dato1.push(this.productos1[x]);
+          x++;
+          console.log(this.productos1);
+          
+        }
         
         this.cargando = false;
         resolve();
