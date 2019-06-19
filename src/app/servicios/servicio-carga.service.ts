@@ -41,13 +41,6 @@ export class ServicioCargaService {
          this.db.collection('menu').valueChanges()
       .subscribe((resp: Product[]) => {
         this.productos = resp;
-        let x=0;
-        while(x<8){
-          this.dato.push(this.productos[x]);
-          x++;
-
-        }
-        
         this.cargando = false;
         resolve();
           });
