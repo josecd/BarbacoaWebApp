@@ -29,7 +29,6 @@ import { ServicioCargaService } from './servicios/servicio-carga.service';
 import {HttpClientModule  } from '@angular/common/http';
 import { FirebaseService } from './servicios/firebase.service';
 
-import { AgmCoreModule } from '@agm/core';
 
 enableProdMode();
 @NgModule({
