@@ -58,7 +58,6 @@ export class ServicioCargaService {
         while(x<6){
           this.dato1.push(this.productos1[x]);
           x++;
-          console.log(this.productos1);
           
         }
         
