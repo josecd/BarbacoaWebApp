@@ -6,5 +6,8 @@ export interface Product {
     gramo?: number;
     banderaTabla?: number;
     espeCasa?: number;
-    avatar?:string;
+    avatar?: string;
+    precioQueso?: number;
+    precioHarina?: number;
+    precioHarinaQueso?: number;
      }

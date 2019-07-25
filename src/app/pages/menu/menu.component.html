@@ -125,22 +125,22 @@
                                                        </div>
                                                
                                                <img src="../../../assets/images/tacos.png" alt="">
-             
-                                               <table *ngFor="let item of _servicioProducto.productos " style="width:100%" class="set_menu">
-
-                                                <tr *ngIf="item.banderaTabla == 4">
-                                                        <td>Por pieza</td>
+                                               
+                                                        <td style="width: 160px;">Por pieza</td>
                                                         <td style="width: 47px;">MAÍZ </td>
                                                         <td style="width: 76px;">C/QUESO</td> 
                                                         <td style="width: 67px;">HARINA</td>
-                                                        <td>HARINA Y QUESO</td>
+                                                        <td>HARINA/<br>QUESO</td>
 
-                                                </tr>
+                                               
+                                               <table *ngFor="let item of _servicioProducto.productos " style="width:100%" class="set_menu">
 
                                                 <tr *ngIf="item.banderaTabla == 4" >
-                                                        <td >{{item.name}}</td>
-                                                        <td >{{item.gramo}} g</td>
-                                                        <td ><p>Precio: ${{item.precio}}</p> </td>
+                                                        <td style="width: 118px;" >{{item.name}} </td>
+                                                        <td ><p style="width: 54px;" >${{item.precio}} </p></td>
+                                                        <td ><p style="width: 54px;" >${{item.precioQueso}}</p> </td>
+                                                        <td ><p style="width: 54px;">${{item.precioHarina}}</p></td>
+                                                        <td ><p style=" width: 54px;" >  ${{item.precioHarinaQueso}}</p></td>
                                                 </tr>
 
                                                
@@ -157,20 +157,24 @@
                                                        
                                                        <img src="../../../assets/images/ordentacos.png" alt="">
      
-                                                       <table *ngFor="let item of _servicioProducto.productos " style="width:100%" class="set_menu">
-                                                        <tr *ngIf="item.banderaTabla == 4">
-                                                                <td>Por orden</td>
-                                                                <td>Natural </td>
-                                                                <td>C/QUESO</td> 
-                                                                <td>Especial c/pancita</td>
+                                                      
+                                                       <td style="width: 134px;">Por orden </td>
+                                                       <td style="width: 65px;">Natural </td>
+                                                       <td style="width: 92px;">C/QUESO</td> 
+                                                       <td style="width: 67px;">Especial c/pancita</td>
+                                                       
                                                                 
         
-                                                        </tr>
+                                                       <table *ngFor="let item of _servicioProducto.productos " style="width:100%" class="set_menu">
+                                                        
 
                                                         <tr *ngIf="item.banderaTabla == 5" >
-                                                                <td >{{item.name}}</td>
-                                                                <td >{{item.gramo}} g</td>
-                                                                <td ><p> Precio: ${{item.precio}}</p> </td>
+                                                                <td style="width: 132px;" >{{item.name}} </td>
+                                                                <td ><p style="width: 61px;" >${{item.precio}} </p></td>
+                                                                <td ><p style="width: 83px;" >${{item.precioQueso}}</p> </td>
+                                                                <td ><p style="width: 54px;">${{item.precioHarina}}</p></td>
+
+
                                                         </tr>
                                                        
                                         </table>
@@ -184,21 +188,17 @@
                                                        
                                                          <img src="../../../assets/images/especialidades.png" alt="">
 
-                                                         <table *ngFor="let item of _servicioProducto.productos " style="width:100%" class="set_menu">
-                                                            
+                                                                <td style="width: 151px;">Tortas </td>
+                                                                <td style="width: 96px;">Natural </td>
+                                                                <td style="width: 92px;">C/QUESO</td>    
 
-                                                                <tr *ngIf="item.banderaTabla == 4">
-                                                                        <td>Torta </td>
-                                                                        <td >Natural </td>
-                                                                        <td >C/QUESO</td> 
-                                                                       
-                
-                                                                </tr>
+                                                         <table *ngFor="let item of _servicioProducto.productos " style="width:100%" class="set_menu">
+                                                        
 
                                                                 <tr *ngIf="item.banderaTabla == 6" >
-                                                                        <td >{{item.name}}</td>
-                                                                        <td >{{item.gramo}} g</td>
-                                                                        <td ><p> Precio: ${{item.precio}}</p> </td>
+                                                                        <td style="width: 132px;" >{{item.name}} </td>
+                                                                        <td ><p style="width: 61px;" >${{item.precio}} </p></td>
+                                                                        <td ><p style="width: 83px;" >${{item.precioQueso}}</p> </td>
                                                                 </tr>
                                                                
                                                 </table> 
