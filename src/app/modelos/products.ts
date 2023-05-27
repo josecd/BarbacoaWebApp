@@ -1,6 +1,13 @@
 export interface Product {
-    id?: string,
-    nombre?: string,
-    descripcion?: string,
-    precio?: number,
-}
+    id?: string;
+    name?: string;
+    descripcion?: string;
+    precio?: number;
+    gramo?: number;
+    banderaTabla?: number;
+    espeCasa?: number;
+    avatar?: string;
+    precioQueso?: number;
+    precioHarina?: number;
+    precioHarinaQueso?: number;
+     }

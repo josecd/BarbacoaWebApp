@@ -6,6 +6,25 @@ body {
 .mb-60 {
 	margin-bottom: 60px;
 }
+//ir a la parte superior de la pagina
+.scroll-to-top {
+	position: fixed;
+	display: scroll;
+	background-color: red;
+    bottom: 15px;
+    right: 15px;
+    opacity: 0;
+	transition: all .5s ease-in-out;
+	font-size: 20px;
+	float: left;
+}
+
+.show-scroll {
+    opacity: 1;
+    transition: all .5s ease-in-out;
+}
+//fin
+
 .section-title p {
 	font-size: 24px;
 	font-family: Oleo Script;
@@ -44,40 +63,46 @@ body {
 .nav-item a {
 	color: #333;
 }
+
 .menu_tab .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
 	color: white;
 	background-color: #FF5E18;
 	border-color: #FF5E18;
 }
+
+//INICIO DE SECCION DE MENU
+
+//separacion de imagen
 .single_menu_list {
 	position: relative;
-	padding-left: 190px;
-	margin-bottom: 110px;
+	padding-left: 35%;
+	margin-bottom: 30px;
 }
-
+// IMAGEN DEL MENU
 .single_menu_list img {
 	max-width: 30%;
 	position: absolute;
 	left: 0px;
 	top: 0;
-	border: 1px solid #ddd;
+	border: 1px solid BLACK;
 	padding: 3px;
 	border-radius: 50%;
 	transition: .4s
 }
 
+//EFECTO DE LA IMAGEN DEL MENU
 .single_menu_list:hover img {
 	border-radius: 0;
 	transition: .4s
 }
-
+//texto de los platillos
 .single_menu_list h4 {
 	font-size: 20px;
 	border-bottom: 1px dashed #333;
 	padding-bottom: 15px;
 	margin-bottom: 10px;
 }
-
+//color del costo
 .single_menu_list h4 span {
 	float: right;
 	font-weight: bold;
@@ -85,3 +110,40 @@ body {
 	font-style: italic;
 }
 
+//FIN DE SECCION DE MENU
+
+///
+.plr-255{
+	//ERROR DEL QUIENES SOMOS [CORREGIDO]
+	margin-left: 10%;
+	margin-right: 10%;	
+}
+
+.span{
+	float: right;
+    font-weight: bold;
+    color: #FF5E18;
+    font-style: italic;
+}
+
+////
+
+.tablaComida{
+	padding: 10px;
+   }
+   
+   .set_menu p  {
+	float: right;
+	color: #FF5E18;
+}
+
+//Boton de subir 
+.subirbtn{
+	width: 70px;
+
+}
+
+//Para los div de las especialidades 
+.especialidadCajon{
+	margin: 42px;
+}

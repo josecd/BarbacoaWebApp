@@ -1,6 +1,11 @@
+<head>
+  <link rel="icon" type="image/x-icon" href="../../../favicon.ico">
+
+</head>
 
 
-<section class="bg-1 h-900x main-slider pos-relative">
+<section class="bg-1 h-900x main-slider pos-relative" (scroll)="onWindowScroll($event);">
+       
   <div class="triangle-up pos-bottom"></div>
   <div class="container h-100">
           <div class="dplay-tbl">
@@ -15,143 +20,61 @@
           </div><!-- dplay-tbl -->
   </div><!-- container --> 
 </section> 
-
+ 
 
 <section class="story-area left-text center-sm-text pos-relative">
   <div class="abs-tbl bg-2 w-20 z--1 dplay-md-none"></div>
   <div class="abs-tbr bg-3 w-20 z--1 dplay-md-none"></div>
   <div class="container">
           <div class="heading">
-                  <img class="heading-img" src="assets/images/heading_logo.png" alt="">
-                  <h2>Our Story</h2>
-          </div>
+              <div class="col-md-12">
+                     <div class="mt-50 mt-sm-30 mb-50 mb-sm-30 center-text"> <h2>Quiénes Somos!</h2> </div>
 
-          <div class="row">
-                  <div class="col-md-6">
-                          <p class="mb-30">Maecenas fermentum tortor id fringilla molestie. In hac habitasse
-                                  platea dictumst. Morbi maximus
-                                  lobortis ipsum, ut blandit augue ullamcorper vitae.
-                                  Nulla dignissim leo felis, eget cursus elit aliquet ut. Curabitur vel convallis
-                                  massa. Morbi tellus
-                                  tortor, luctus et lacinia non, tincidunt in lacus.
-                                  Vivamus sed ligula imperdiet, feugiat magna vitae, blandit ex. Vestibulum id
-                                  dapibus dolor, ac
-                                  cursus nulla. </p>
-                  </div><!-- col-md-6 -->
-
-                  <div class="col-md-6">
-                          <p class="mb-30">Maecenas fermentum tortor id fringilla molestie. In hac habitasse platea
-                                  dictumst.Morbi maximus lobortis ipsum, ut blandit augue ullamcorper vitae.
-                                  Nulla dignissim leo felis, eget cursus elit aliquet ut. Curabitur vel
-                                  convallismassa. Morbi tellus tortor, luctus et lacinia non, tincidunt in lacus.
-                                  Vivamus sed ligula imperdiet, feugiat magna vitae, blandit ex. Vestibulumidda
-                                  pibus dolor, accursus nulla. </p>
-                  </div><!-- col-md-6 -->
+                     <h5 class="center-text mb-30 mb-sm-30 plr-255">
+                                   “Para poder hacer que la misión y la visión sea una realidad todos en la empresa debemos
+                                    unirnos para mejorar el desempeño total de los restaurantes”</h5>
+             </div>
+             
           </div><!-- row -->
   </div><!-- container -->
 </section>
-
+<!--Scroll to top-->
+<button [ngClass]="{'show-scroll': showScroll}" (click)="scrollToTop()" class="scroll-to-top">
+       <img src="../../../assets/images/subir.png" alt="" class="subirbtn">
+    </button>
 
 <section class="story-area bg-seller color-white pos-relative">
   <div class="pos-bottom triangle-up"></div>
   <div class="pos-top triangle-bottom"></div>
   <div class="container">
           <div class="heading">
-                  <img class="heading-img" src="assets/images/heading_logo.png" alt="">
-                  <h2>Best Sellers</h2>
+                  
+                  <h2>Especialidades de la casa</h2>
+          </div>
+          
+          <div class="row">
+              <div *ngFor="let item of _servicioProducto.productos ">
+                  <div  *ngIf="item.espeCasa == 1"  class="especialidadCajon ">
+                          <div class="center-text mb-30">
+                                  <div class="ïmg-200x mlr-auto pos-relative">
+                                          <!-- <h6  class="ribbon-cont"><div class="ribbon secondary"></div><b>SPECIALITY</b></h6> -->
+                                          <img src="{{item.avatar}}" alt="">
+                                  </div>
+                                  <h5 class="mt-20">{{item.name}}</h5>
+                                  <h4 class="mt-5"><b>$ {{item.precio}}</b></h4>
+                                  <!-- <h6 class="mt-20"><a href="#" class="btn-brdr-primary plr-25"><b>Order Now</b></a></h6> -->
+                          </div><!--text-center-->
+                  </div><!-- col-md-3 -->
+              </div> 
           </div>
 
-          <div class="row">
-                  <div class="col-lg-3 col-md-4  col-sm-6 ">
-                          <div class="center-text mb-30">
-                                  <div class="ïmg-200x mlr-auto pos-relative">
-                                          <!-- <h6 class="ribbon-cont"><div class="ribbon primary"></div><b>OFFER</b></h6> -->
-                                          <img src="assets/images/seller-2-200x200.png" alt="">
-                                  </div>
-                                  <h5 class="mt-20">Pizza Margherita</h5>
-                                  <h4 class="mt-5"><b>$11.90</b></h4>
-                                  <h6 class="mt-20"><a href="#" class="btn-brdr-primary plr-25"><b>Order Now</b></a></h6>
-                          </div><!--text-center-->
-                  </div><!-- col-md-3 -->
-
-                  <div class="col-lg-3 col-md-4  col-sm-6 ">
-                          <div class="center-text mb-30">
-                                  <div class="ïmg-200x mlr-auto pos-relative"><img src="assets/images/seller-2-200x200.png" alt=""></div>
-                                  <h5 class="mt-20">Pizza Margherita</h5>
-                                  <h4 class="mt-5"><b>$11.90</b></h4>
-                                  <h6 class="mt-20"><a href="#" class="btn-brdr-primary plr-25"><b>Order Now</b></a></h6>
-                          </div><!--text-center-->
-                  </div><!-- col-md-3 -->
-
-                  <div class="col-lg-3 col-md-4  col-sm-6 ">
-                          <div class="center-text mb-30">
-                                  <div class="ïmg-200x mlr-auto pos-relative"><img src="assets/images/seller-2-200x200.png" alt=""></div>
-                                  <h5 class="mt-20">Pizza Margherita</h5>
-                                  <h4 class="mt-5"><b>$11.90</b></h4>
-                                  <h6 class="mt-20"><a href="#" class="btn-brdr-primary plr-25"><b>Order Now</b></a></h6>
-                          </div><!--text-center-->
-                  </div><!-- col-md-3 -->
-
-                  <div class="col-lg-3 col-md-4  col-sm-6 ">
-                          <div class="center-text mb-30">
-                                  <div class="ïmg-200x mlr-auto pos-relative">
-                                          <h6  class="ribbon-cont"><div class="ribbon secondary"></div><b>SPECIALITY</b></h6>
-                                          <img src="assets/images/seller-2-200x200.png" alt="">
-                                  </div>
-                                  <h5 class="mt-20">Pizza Margherita</h5>
-                                  <h4 class="mt-5"><b>$11.90</b></h4>
-                                  <h6 class="mt-20"><a href="#" class="btn-brdr-primary plr-25"><b>Order Now</b></a></h6>
-                          </div><!--text-center-->
-                  </div><!-- col-md-3 -->
-
-                  <div class="col-lg-3 col-md-4  col-sm-6 ">
-                          <div class="center-text mb-30">
-                                  <div class="ïmg-200x mlr-auto pos-relative"><img src="assets/images/seller-2-200x200.png" alt=""></div>
-                                  <h5 class="mt-20">Pizza Margherita</h5>
-                                  <h4 class="mt-5"><b>$11.90</b></h4>
-                                  <h6 class="mt-20"><a href="#" class="btn-brdr-primary plr-25"><b>Order Now</b></a></h6>
-                          </div><!--text-center-->
-                  </div><!-- col-md-3 -->
-
-                  <div class="col-lg-3 col-md-4  col-sm-6 ">
-                          <div class="center-text mb-30">
-                                  <div class="ïmg-200x mlr-auto pos-relative">
-                                          <h6 class="ribbon-cont"><div class="ribbon primary"></div><b>OFFER</b></h6>
-                                          <img src="assets/images/seller-2-200x200.png" alt="">
-                                  </div>
-                                  <h5 class="mt-20">Pizza Margherita</h5>
-                                  <h4 class="mt-5"><b>$11.90</b></h4>
-                                  <h6 class="mt-20"><a href="#" class="btn-brdr-primary plr-25"><b>Order Now</b></a></h6>
-                          </div><!--text-center-->
-                  </div><!-- col-md-3 -->
-
-                  <div class="col-lg-3 col-md-4  col-sm-6 ">
-                          <div class="center-text mb-30">
-                                  <div class="ïmg-200x mlr-auto pos-relative">
-                                          <h6 class="ribbon-cont color-black"><div class="ribbon white"></div><b>PLUS SIZE</b></h6>
-                                          <img src="assets/images/seller-2-200x200.png" alt="">
-                                  </div>
-                                  <h5 class="mt-20">Pizza Margherita</h5>
-                                  <h4 class="mt-5"><b>$11.90</b></h4>
-                                  <h6 class="mt-20"><a href="#" class="btn-brdr-primary plr-25"><b>Order Now</b></a></h6>
-                          </div><!--text-center-->
-                  </div><!-- col-md-3 -->
-
-                  <div class="col-lg-3 col-md-4  col-sm-6 ">
-                          <div class="center-text mb-30">
-                                  <div class="ïmg-200x mlr-auto pos-relative"><img src="assets/images/seller-2-200x200.png" alt=""></div>
-                                  <h5 class="mt-20">Pizza Margherita</h5>
-                                  <h4 class="mt-5"><b>$11.90</b></h4>
-                                  <h6 class="mt-20"><a href="#" class="btn-brdr-primary plr-25"><b>Order Now</b></a></h6>
-                          </div><!--text-center-->
-                  </div><!-- col-md-3 -->
-          </div><!-- row -->
-
-          <h6 class="center-text mt-40 mt-sm-20 mb-30"><a href="#" class="btn-primaryc plr-25"><b>SEE TODAYS MENU</b></a></h6>
+          <h6 class="center-text mt-40 mt-sm-20 mb-30"><a href="#" class="btn-primaryc plr-25"><b>MENÚ</b></a></h6>
   </div><!-- container -->
 </section>
 
-
+<!-- AREA DE TRABAJO VERIFICAR EL RESPONSIVO-->
+<!-- NOSE QUE HACER                         -->
+<!-- -->
 
           <section class="menu_list mt-60 mb-60">
                 <div class="container">
@@ -159,175 +82,233 @@
                           <div class="col-xl-12">
                                 <div class="heading">
                                   
-                                        <h2>Menú</h2>
+                                        <h2>Un poco del menú</h2>
                                 </div>
                           </div>
                        </div>
                        <div class="row">
                           <ul class="nav nav-tabs menu_tab" id="myTab" role="tablist">
                                  <li class="nav-item">
-                                        <a class="nav-link" id="breakfast-tab" data-toggle="tab" href="#breakfast" role="tab" aria-selected="false">Breakfast</a>
+                                        <a class="nav-link active " id="breakfast-tab" data-toggle="tab" href="#breakfast" role="tab" aria-selected="true">Comidas</a>
                                  </li>
                                  <li class="nav-item">
-                                        <a class="nav-link" id="lunch-tab" data-toggle="tab" href="#lunch" role="tab" aria-selected="false">Lunch</a>
+                                        <a class="nav-link" id="lunch-tab" data-toggle="tab" href="#lunch" role="tab" aria-selected="false">Bebidas</a>
                                  </li>
                                  <li class="nav-item">
-                                        <a class="nav-link active show" id="dinner-tab" data-toggle="tab" href="#dinner" role="tab" aria-selected="true">Dinner</a>
+                                        <a class="nav-link " id="dinner-tab" data-toggle="tab" href="#dinner" role="tab" aria-selected="false">Postres</a>
                                  </li>
                           </ul>
                        </div>
                        <div class="row">
                           <div class="tab-content col-xl-12" id="myTabContent">
-                                 <div class="tab-pane fade" id="breakfast" role="tabpanel" aria-labelledby="breakfast-tab">
+                                 <div class="tab-pane fade active show" id="breakfast" role="tabpanel" aria-labelledby="breakfast-tab">
                                         <div class="row">
                                                <div class="col-md-6">
+
                                                   <div class="single_menu_list">
-                                                         <img src="http://infinityflamesoft.com/html/restarunt-preview/assets/img/menu/menu-5.jpg" alt="">
+                                                         <img src="../../../assets/images/especialidades.png" alt="">
                                                          <div class="menu_content">
-                                                                <h4>Chicken Fried Salad  <span>$45</span></h4>
-                                                                <p>Aperiam tempore sit,perferendis numquam repudiandae porro voluptate dicta saepe facilis.</p>
+                                                               <h4>Desayuno  </h4>
+                                                               <div class="tablaComida">
+                                                               <table *ngFor="let item of _servicioProducto.productos ; let i=index"   style="width:100%" class="set_menu">
+                                                                      <tr *ngIf="i <50" >
+                                                                             
+                                                                             <td *ngIf="item.banderaTabla == 1" style="width: 140px;">{{item.name}}</td>
+                                                                             <td *ngIf="item.banderaTabla == 1" style="width: 40px;" >{{item.gramo}} g</td>
+                                                                             <td *ngIf="item.banderaTabla == 1"> <p> Precio: ${{item.precio}}</p> </td>
+                                                                      </tr>
+
+                                                               </table> 
+                                                               </div>
+                                                        </div>
+                                                 </div>
+                                                 <!--INICIO DE PLATILLO DE COMIDA-->
+                                                 <div class="single_menu_list">
+                                                        <img src="../../../assets/images/especialidades.png" alt="">
+                                                        <div class="menu_content">
+                                                               <h4>Carne por kilo  </h4>
+                                                               <div class="tablaComida">
+                                                               <table *ngFor="let item of _servicioProducto.productos; let i=index "   style="width:100%" class="set_menu">
+                                                                      <tr *ngIf="i <100">
+                                                                             <td *ngIf="item.banderaTabla == 13" style="width: 75px;">{{item.name}}</td>
+                                                                             <td *ngIf="item.banderaTabla == 13" style="width: 60px;" >{{item.gramo}} g </td>
+                                                                             <td *ngIf="item.banderaTabla == 13" style="width: 50px;"> <p> Precio: ${{item.precio}} </p> </td>    
+                                                                      </tr>
+                                                               </table> 
+                                                               </div>
+                                                        </div>
+                                                 </div>
+                                                 <!--INICIO DE PLATILLO DE COMIDA-->
+                                                 <div class="single_menu_list">
+                                                        <img src="../../../assets/images/especialidades.png" alt="">
+                                                        <div class="menu_content">
+                                                               <h4>Especialidades  </h4>
+                                                               <div class="tablaComida">
+                                                               <table *ngFor="let item of _servicioProducto.productos; let i=index  "   style="width:100%" class="set_menu">
+                                                                      <tr *ngIf="i <50">
+                                                                             <td *ngIf="item.banderaTabla == 3" style="width: 184px;">{{item.name}}</td>
+                                                                             <td *ngIf="item.banderaTabla == 3" style="width: 60px;">{{item.gramo}} g</td>
+                                                                             <td *ngIf="item.banderaTabla == 3"> <p> Precio: ${{item.precio}}</p> </td>
+                                                                      </tr>
+                                                               </table> 
+                                                               </div>
+                                                        </div>
+                                                 </div>
+                                          </div>
+
+                                          <div class="col-md-6">
+                                                 <div class="single_menu_list">
+                                                 <img src="../../../assets/images/especialidades.png" alt="">
+                                                        <div class="menu_content">
+                                                        <h4>Quesos  </h4>
+                                                               <div class="tablaComida">
+                                                               <table *ngFor="let item of _servicioProducto.productos "   style="width:100%" class="set_menu">
+                                                                      <tr>
+                                                                             <td *ngIf="item.banderaTabla == 8" style="width: 184px;">{{item.name}}</td>
+                                                                             <td *ngIf="item.banderaTabla == 8" style="width: 60px;">{{item.gramo}} g</td>
+                                                                             <td *ngIf="item.banderaTabla == 8"> <p> Precio: ${{item.precio}}</p> </td>
+                                                                      </tr>
+                                                               </table> 
+                                                               </div>
                                                          </div>
-                                                  </div>
-                                                  <div class="single_menu_list">
-                                                         <img src="http://infinityflamesoft.com/html/restarunt-preview/assets/img/menu/menu-2.jpg" alt="">
-                                                         <div class="menu_content">
-                                                                <h4>Chicken Fried Salad  <span>$45</span></h4>
-                                                                <p>Aperiam tempore sit,perferendis numquam repudiandae porro voluptate dicta saepe facilis.</p>
-                                                         </div>
-                                                  </div>
-                                                  <div class="single_menu_list">
-                                                         <img src="http://infinityflamesoft.com/html/restarunt-preview/assets/img/menu/menu-3.jpg" alt="">
-                                                         <div class="menu_content">
-                                                                <h4>Chicken Fried Salad  <span>$45</span></h4>
-                                                                <p>Aperiam tempore sit,perferendis numquam repudiandae porro voluptate dicta saepe facilis.</p>
-                                                         </div>
-                                                  </div>
-                                               </div>
-                                               <div class="col-md-6">
-                                                  <div class="single_menu_list">
-                                                         <img src="http://infinityflamesoft.com/html/restarunt-preview/assets/img/menu/menu-4.jpg" alt="">
-                                                         <div class="menu_content">
-                                                                <h4>Chicken Fried Salad  <span>$45</span></h4>
-                                                                <p>Aperiam tempore sit,perferendis numquam repudiandae porro voluptate dicta saepe facilis.</p>
-                                                         </div>
-                                                  </div>
-                                                  <div class="single_menu_list">
-                                                         <img src="http://infinityflamesoft.com/html/restarunt-preview/assets/img/menu/menu-5.jpg" alt="">
-                                                         <div class="menu_content">
-                                                                <h4>Chicken Fried Salad  <span>$45</span></h4>
-                                                                <p>Aperiam tempore sit,perferendis numquam repudiandae porro voluptate dicta saepe facilis.</p>
-                                                         </div>
-                                                  </div>
-                                                  <div class="single_menu_list">
-                                                         <img src="http://infinityflamesoft.com/html/restarunt-preview/assets/img/menu/menu-6.jpg" alt="">
-                                                         <div class="menu_content">
-                                                                <h4>Chicken Fried Salad  <span>$45</span></h4>
-                                                                <p>Aperiam tempore sit,perferendis numquam repudiandae porro voluptate dicta saepe facilis.</p>
-                                                         </div>
-                                                  </div>
-                                               </div>
-                                        </div>
-                                 </div>
+                                                 </div>
+                                                 <!--INICIO DE PLATILLO DE COMIDA-->
+                                                 <div class="single_menu_list">
+                                                 <img src="../../../assets/images/especialidades.png" alt="">
+                                                        <div class="menu_content">
+                                                        <h4>Alambres  </h4>
+                                                               <div class="tablaComida">
+                                                               <table *ngFor="let item of _servicioProducto.productos "   style="width:100%" class="set_menu">
+                                                                      <tr>                 
+                                                                             <td *ngIf="item.banderaTabla == 9" style="width: 195px;">{{item.name}}</td>
+                                                                             <td *ngIf="item.banderaTabla == 9" style="width: 45px;" >{{item.gramo}} g</td>
+                                                                             <td *ngIf="item.banderaTabla == 9"> <p> Precio: ${{item.precio}}</p> </td>
+                                                                      </tr>
+                                                               </table> 
+                                                               </div>
+                                                        </div>
+                                                 </div>
+                                                 <!--INICIO DE PLATILLO DE COMIDA-->
+                                                 <div class="single_menu_list">
+                                                 <img src="../../../assets/images/especialidades.png" alt="">
+                                                        <div class="menu_content">
+                                                        <h4>Costras  </h4>
+                                                               <div class="tablaComida">
+                                                               <table *ngFor="let item of _servicioProducto.productos; let i=index "  style="width:100%" class="set_menu">
+                                                                      <tr  >
+                                                                             <td *ngIf="item.banderaTabla == 10" style="width: 184px;">{{item.name}}</td>
+                                                                             <td *ngIf="item.banderaTabla == 10" style="width: 40px;">{{item.gramo}} g</td>
+                                                                             <td *ngIf="item.banderaTabla == 10"> <p> Precio: ${{item.precio}}</p> </td>
+                                                                      </tr>
+                                                               </table> 
+                                                               </div>
+                                                        </div>
+                                                 </div>
+                                          </div>
+                                   </div>
+                            </div>
+                            
                                  <div class="tab-pane fade" id="lunch" role="tabpanel" aria-labelledby="lunch-tab">
                                         <div class="row">
-                                               <div class="col-md-6">
-                                                  <div class="single_menu_list">
-                                                         <img src="http://infinityflamesoft.com/html/restarunt-preview/assets/img/menu/menu-2.jpg" alt="">
+                                          <div class="col-md-6">
+
+                                                 <div class="single_menu_list">
+                                                         <img src="../../../assets/images/especialidades.png" alt="">
                                                          <div class="menu_content">
-                                                                <h4>Chicken Fried Salad  <span>$45</span></h4>
-                                                                <p>Aperiam tempore sit,perferendis numquam repudiandae porro voluptate dicta saepe facilis.</p>
+                                                                 <h4>BEBIDAS </h4>
+                                                                 <div class="tablaComida">
+                                                                 <table *ngFor="let item of _servicioProducto.productos1 "   style="width:100%" class="set_menu">
+                                                                         <tr >
+                                                                                 <td *ngIf="item.banderaTabla == 1" >{{item.name}}</td>
+                                                                                 <td *ngIf="item.banderaTabla == 1"> <p> Precio: ${{item.precio}}</p> </td>                       
+                                                                         </tr>
+                                                                 </table> 
+                                                                 </div>
+                                                         </div>
+                                                 </div>
+                                                 <!--INICIO DE PLATILLO DE COMIDA-->
+                                                 <div class="single_menu_list">
+                                                         <img src="../../../assets/images/especialidades.png" alt="">
+                                                         <div class="menu_content">
+                                                                 <h4>CERVEZAS  </h4>
+                                                                 <div class="tablaComida">
+                                                                 <table *ngFor="let item of _servicioProducto.productos1 "   style="width:100%" class="set_menu">
+                                                                         <tr>
+                                                                                 <td *ngIf="item.banderaTabla == 2" >{{item.name}}</td>
+                                                                                 <td *ngIf="item.banderaTabla == 2"> <p> Precio: ${{item.precio}}</p> </td>
+                                                                         </tr>
+                                                                 </table> 
+                                                                 </div>
                                                          </div>
                                                   </div>
-                                                  <div class="single_menu_list">
-                                                         <img src="http://infinityflamesoft.com/html/restarunt-preview/assets/img/menu/menu-4.jpg" alt="">
+                 
+                                                                                         
+                                          </div>
+                 
+                                                                
+                                         <div class="col-md-6">
+                                                 <!--INICIO DE MICHELADAS-------->
+                                                 <div class="single_menu_list">
+                                                         <img src="../../../assets/images/especialidades.png" alt="">
                                                          <div class="menu_content">
-                                                                <h4>Chicken Fried Salad  <span>$45</span></h4>
-                                                                <p>Aperiam tempore sit,perferendis numquam repudiandae porro voluptate dicta saepe facilis.</p>
+                                                                 <h4>MICHELADAS  </h4>
+                                                                 <div class="tablaComida">
+                                                                 <table *ngFor="let item of _servicioProducto.productos1 "   style="width:100%" class="set_menu">
+                                                                         <tr>
+                                                                                 <td *ngIf="item.banderaTabla == 4" >{{item.name}}</td>
+                                                                                 <td *ngIf="item.banderaTabla == 4"> <p> Precio: ${{item.precio}}</p> </td>
+                                                                         </tr>
+                                                                 </table> 
+                                                                 </div>
                                                          </div>
                                                   </div>
-                                                  <div class="single_menu_list">
-                                                         <img src="http://infinityflamesoft.com/html/restarunt-preview/assets/img/menu/menu-2.jpg" alt="">
+                                                 <!--INICIO DE BEBIDA DE OTROS -->
+                                                 <div class="single_menu_list">
+                                                         <img src="../../../assets/images/especialidades.png" alt="">
                                                          <div class="menu_content">
-                                                                <h4>Chicken Fried Salad  <span>$45</span></h4>
-                                                                <p>Aperiam tempore sit,perferendis numquam repudiandae porro voluptate dicta saepe facilis.</p>
+                                                                 <h4>OTROS  </h4>
+                                                                 <div class="tablaComida">
+                                                                 <table *ngFor="let item of _servicioProducto.productos1 "   style="width:100%" class="set_menu">
+                                                                         <tr>
+                                                                                 <td *ngIf="item.banderaTabla == 5" >{{item.name}}</td>
+                                                                                 <td *ngIf="item.banderaTabla == 5"> <p> Precio: ${{item.precio}}</p> </td>
+                                                                         </tr>
+                                                                 </table> 
+                                                                 </div>
                                                          </div>
-                                                  </div>
-                                               </div>
-                                               <div class="col-md-6">
-                                                  <div class="single_menu_list">
-                                                         <img src="http://infinityflamesoft.com/html/restarunt-preview/assets/img/menu/menu-5.jpg" alt="">
-                                                         <div class="menu_content">
-                                                                <h4>Chicken Fried Salad  <span>$45</span></h4>
-                                                                <p>Aperiam tempore sit,perferendis numquam repudiandae porro voluptate dicta saepe facilis.</p>
-                                                         </div>
-                                                  </div>
-                                                  <div class="single_menu_list">
-                                                         <img src="http://infinityflamesoft.com/html/restarunt-preview/assets/img/menu/menu-3.jpg" alt="">
-                                                         <div class="menu_content">
-                                                                <h4>Chicken Fried Salad  <span>$45</span></h4>
-                                                                <p>Aperiam tempore sit,perferendis numquam repudiandae porro voluptate dicta saepe facilis.</p>
-                                                         </div>
-                                                  </div>
-                                                  <div class="single_menu_list">
-                                                         <img src="http://infinityflamesoft.com/html/restarunt-preview/assets/img/menu/menu-4.jpg" alt="">
-                                                         <div class="menu_content">
-                                                                <h4>Chicken Fried Salad  <span>$45</span></h4>
-                                                                <p>Aperiam tempore sit,perferendis numquam repudiandae porro voluptate dicta saepe facilis.</p>
-                                                         </div>
-                                                  </div>
-                                               </div>
+                                                 </div>
+                                          </div>
+              
+                                              
                                         </div>
                                  </div>
-                                 <div class="tab-pane fade active show" id="dinner" role="tabpanel" aria-labelledby="dinner-tab">
-                                        <div class="row">
-                                               <div class="col-md-6">
-                                                  <div class="single_menu_list">
-                                                         <img src="http://infinityflamesoft.com/html/restarunt-preview/assets/img/menu/menu-1.jpg" alt="">
+                                 <!--POSTRES-->
+                            <div class="tab-pane fade " id="dinner" role="tabpanel" aria-labelledby="dinner-tab">
+                                   <div class="row">
+                                          <div class="col-md-6">
+
+                                                 <div class="single_menu_list">
+                                                         <img src="../../../assets/images/especialidades.png" alt="">
                                                          <div class="menu_content">
-                                                                <h4>Chicken Fried Salad  <span>$45</span></h4>
-                                                                <p>Aperiam tempore sit,perferendis numquam repudiandae porro voluptate dicta saepe facilis.</p>
+                                                                 <h4>POSTRES </h4>
+                                                                 <div class="tablaComida">
+                                                                 <table *ngFor="let item of _servicioProducto.productos "   style="width:100%" class="set_menu">
+                                                                         <tr>
+                                                                                 <td *ngIf="item.banderaTabla == 14" >{{item.name}}</td>
+                                                                                 <td *ngIf="item.banderaTabla == 14" >{{item.gramo}} g</td>
+                                                                                 <td *ngIf="item.banderaTabla == 14"> <p> Precio: ${{item.precio}}</p> </td>                       
+                                                                         </tr>
+                                                                 </table> 
+                                                                 </div>
                                                          </div>
-                                                  </div>
-                                                  <div class="single_menu_list">
-                                                         <img src="http://infinityflamesoft.com/html/restarunt-preview/assets/img/menu/menu-4.jpg" alt="">
-                                                         <div class="menu_content">
-                                                                <h4>Chicken Fried Salad  <span>$45</span></h4>
-                                                                <p>Aperiam tempore sit,perferendis numquam repudiandae porro voluptate dicta saepe facilis.</p>
-                                                         </div>
-                                                  </div>
-                                                  <div class="single_menu_list">
-                                                         <img src="http://infinityflamesoft.com/html/restarunt-preview/assets/img/menu/menu-1.jpg" alt="">
-                                                         <div class="menu_content">
-                                                                <h4>Chicken Fried Salad  <span>$45</span></h4>
-                                                                <p>Aperiam tempore sit,perferendis numquam repudiandae porro voluptate dicta saepe facilis.</p>
-                                                         </div>
-                                                  </div>
-                                               </div>
-                                               <div class="col-md-6">
-                                                  <div class="single_menu_list">
-                                                         <img src="http://infinityflamesoft.com/html/restarunt-preview/assets/img/menu/menu-3.jpg" alt="">
-                                                         <div class="menu_content">
-                                                                <h4>Chicken Fried Salad  <span>$45</span></h4>
-                                                                <p>Aperiam tempore sit,perferendis numquam repudiandae porro voluptate dicta saepe facilis.</p>
-                                                         </div>
-                                                  </div>
-                                                  <div class="single_menu_list">
-                                                         <img src="http://infinityflamesoft.com/html/restarunt-preview/assets/img/menu/menu-2.jpg" alt="">
-                                                         <div class="menu_content">
-                                                                <h4>Chicken Fried Salad  <span>$45</span></h4>
-                                                                <p>Aperiam tempore sit,perferendis numquam repudiandae porro voluptate dicta saepe facilis.</p>
-                                                         </div>
-                                                  </div>
-                                                  <div class="single_menu_list">
-                                                         <img src="http://infinityflamesoft.com/html/restarunt-preview/assets/img/menu/menu-3.jpg" alt="">
-                                                         <div class="menu_content">
-                                                                <h4>Chicken Fried Salad  <span>$45</span></h4>
-                                                                <p>Aperiam tempore sit,perferendis numquam repudiandae porro voluptate dicta saepe facilis.</p>
-                                                         </div>
-                                                  </div>
-                                               </div>
-                                        </div>
-                                 </div>
+                                                 </div>
+                                                
+                                                 
+                                          </div>
+                 
+                                               
+                                   </div>
+                            </div>
                           </div>
                        </div>
                        <div class="container h-100">
@@ -335,7 +316,7 @@
                                            <div class="dplay-tbl-cell center-text color-white" >
                          
                                                    
-                                                   <h5><a [routerLink]="['/menu']"  class="btn-primaryc plr-25"><b>Ver menú </b></a></h5>
+                                                   <h5><a [routerLink]="['/menu']"  class="btn-primaryc plr-25"><b>Ver menú completo</b></a></h5>
                                            </div><!-- dplay-tbl-cell -->
                                    </div><!-- dplay-tbl -->
                            </div><!-- container --> 

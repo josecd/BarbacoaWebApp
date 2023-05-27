@@ -16,10 +16,19 @@ import { SucursalesComponent } from './pages/sucursales/sucursales.component';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from 'src/environments/environment';
-import { AngularFireDatabaseModule, AngularFireDatabase } from "angularfire2/database";    
+import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule, FormGroup } from '@angular/forms';
 import { AngularFireStorageModule } from 'angularfire2/storage';
+
+// Servicios
+import { ServicioCargaService } from './servicios/servicio-carga.service';
+
+
+// HTTP
+import {HttpClientModule  } from '@angular/common/http';
+import { FirebaseService } from './servicios/firebase.service';
+
 
 enableProdMode();
 @NgModule({
@@ -33,6 +42,7 @@ enableProdMode();
     HeaderComponent,
     MenuComponent,
     SucursalesComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -41,15 +51,13 @@ enableProdMode();
     AngularFireDatabaseModule,
     AngularFirestoreModule,
     FormsModule,
+    ReactiveFormsModule,
     AngularFireStorageModule,
     CommonModule,
- 
-    
-
-  
+    HttpClientModule
 
   ],
-  providers: [],
+  providers: [ServicioCargaService,FirebaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
